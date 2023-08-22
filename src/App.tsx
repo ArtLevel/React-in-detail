@@ -26,7 +26,7 @@ function App() {
 			<Rating value={ratingValue} setRating={setRatingValue}/>
 			<OnOff callback={toggleOnOff} value={onOff}/>
 			<UncontrolledAccordion titleValue={'uncontrolled'}/>
-			<UncontrolledRating/>
+			<UncontrolledRating onChange={() => {}}/>
 			<UncontrolledOnOff/>
 		</div>
 	);

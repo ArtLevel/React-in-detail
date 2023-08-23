@@ -43,12 +43,18 @@ export const ControlledCheckbox = () => {
 }
 
 export const ControlledSelect = () => {
-	const [parentValue, setParentValue] = useState(false)
+	const [parentValue, setParentValue] = useState<string | undefined>('2')
 
-	const onChange = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.checked)
+	const onChange = (e: ChangeEvent<HTMLSelectElement>) => setParentValue(e.currentTarget.value)
 
-	return <input type='checkbox' onChange={onChange} checked={parentValue}/>
-
+	return (
+		<select value={parentValue} onChange={onChange}>
+			<option>none</option>
+			<option value={1}>Minsk</option>
+			<option value={2}>Moscow</option>
+			<option value={3}>Kiev</option>
+		</select>
+	)
 }
 
 export const ControlledInputWithFixedValue = () => <input value='it-incubator'/>

@@ -1,40 +1,58 @@
+import { FC } from 'react'
+
+type ItemT = {
+	title: string
+	value: any
+}
+
 type AccordionPT = {
-  titleValue: string;
-  active: boolean;
-  toggleActive: () => void;
-};
+	items: ItemT[]
+	titleValue: string
+	active: boolean
+	toggleActive: () => void
+	onClick: (value: any) => void
+}
 
 export function Accordion({
-  titleValue,
-  active,
-  toggleActive
+	items,
+	titleValue,
+	active,
+	toggleActive,
+	onClick
 }: AccordionPT) {
-  console.log('Accordion rendering');
-  return (
-      <div>
-        <AccordionTitle title={titleValue} callback={toggleActive}/>
-        {active && <AccordionBody/>}
-      </div>
-  );
+	console.log('Accordion rendering')
+	return (
+		<div>
+			<AccordionTitle title={titleValue} callback={toggleActive} />
+			{active && <AccordionBody items={items} onClick={onClick} />}
+		</div>
+	)
 }
 
 type AccordionTitlePT = {
-  title: string;
-  callback: () => void;
-};
-
-function AccordionTitle({title, callback}: AccordionTitlePT) {
-  console.log('AccordeonTitle rendering');
-  return <h3 onClick={callback}>{title}</h3>;
+	title: string
+	callback: () => void
 }
 
-function AccordionBody() {
-  console.log('AccordeonBody rendering');
-  return (
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-  );
+function AccordionTitle({ title, callback }: AccordionTitlePT) {
+	console.log('AccordeonTitle rendering')
+	return <h3 onClick={callback}>{title}</h3>
+}
+
+type AccordionBodyPT = {
+	items: ItemT[]
+	onClick: (value: any) => void
+}
+
+const AccordionBody: FC<AccordionBodyPT> = ({ items, onClick }) => {
+	console.log('AccordeonBody rendering')
+	return (
+		<ul>
+			{items.map((i, inx) => (
+				<li key={inx} onClick={() => onClick(i.value)}>
+					{i.title}
+				</li>
+			))}
+		</ul>
+	)
 }

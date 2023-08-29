@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useReducer, useState } from 'react'
 
 type AccordionPT = {
 	titleValue: string
 }
 
-export function UncontrolledAccordion({ titleValue }: AccordionPT) {
-	const [active, setActive] = useState<boolean>(false)
+type ActionT = {
+	type: string
+}
 
-	const toggleAccordion = () => {
-		setActive((active) => !active)
-	}
+const reducer = (state: boolean, action: ActionT) => {
+	if (action.type === 'TOGGLE-COLLAPSED') return !state
+	return state
+}
+
+export function UncontrolledAccordion({ titleValue }: AccordionPT) {
+	// const [active, setActive] = useState<boolean>(false)
+	const [collapsed, dispatch] = useReducer(reducer, false)
 
 	return (
 		<div>
-			<AccordionTitle title={titleValue} callback={toggleAccordion} />
-			{active && <AccordionBody />}
+			{/*<AccordionTitle title={titleValue} callback={toggleAccordion} />*/}
+			<AccordionTitle
+				title={titleValue}
+				callback={() => dispatch({ type: 'TOGGLE-COLLAPSED' })}
+			/>
+			{collapsed && <AccordionBody />}
 		</div>
 	)
 }

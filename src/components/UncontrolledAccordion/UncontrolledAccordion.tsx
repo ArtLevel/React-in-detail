@@ -9,7 +9,7 @@ export type ActionT = {
 	type: string
 }
 
-const TOGGLE_CONSTANT = 'TOGGLE_COLLAPSED'
+export const TOGGLE_COLLAPSED = 'TOGGLE_COLLAPSED'
 
 export function UncontrolledAccordion({ titleValue }: AccordionPT) {
 	// const [active, setActive] = useState<boolean>(false)
@@ -20,7 +20,7 @@ export function UncontrolledAccordion({ titleValue }: AccordionPT) {
 			{/*<AccordionTitle title={titleValue} callback={toggleAccordion} />*/}
 			<AccordionTitle
 				title={titleValue}
-				callback={() => dispatch({ type: TOGGLE_CONSTANT })}
+				callback={() => dispatch({ type: TOGGLE_COLLAPSED })}
 			/>
 			{!state.collapsed && <AccordionBody />}
 		</div>

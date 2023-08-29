@@ -20,31 +20,31 @@ function App() {
 
 	return (
 		<div className='app'>
-			<Accordion
-				titleValue={'Accordion1'}
-				active={accordionActive}
-				toggleActive={toggleActiveAccordion}
-				items={[
-					{ title: 'Dimych', value: 1 },
-					{ title: 'Valera', value: 2 },
-					{ title: 'Viktor', value: 3 }
-				]}
-				onClick={() => {}}
-			/>
-			<Rating value={ratingValue} setRating={setRatingValue} />
-			<OnOff callback={toggleOnOff} value={onOff} />
+			{/*<Accordion*/}
+			{/*	titleValue={'Accordion1'}*/}
+			{/*	active={accordionActive}*/}
+			{/*	toggleActive={toggleActiveAccordion}*/}
+			{/*	items={[*/}
+			{/*		{ title: 'Dimych', value: 1 },*/}
+			{/*		{ title: 'Valera', value: 2 },*/}
+			{/*		{ title: 'Viktor', value: 3 }*/}
+			{/*	]}*/}
+			{/*	onClick={() => {}}*/}
+			{/*/>*/}
+			{/*<Rating value={ratingValue} setRating={setRatingValue} />*/}
+			{/*<OnOff callback={toggleOnOff} value={onOff} />*/}
 			<UncontrolledAccordion titleValue={'uncontrolled'} />
-			<UncontrolledRating onChange={() => {}} />
-			<UncontrolledOnOff />
-			<Select
-				value={selectValue}
-				items={[
-					{ value: '1', title: 'Minsk' },
-					{ value: '2', title: 'Moscow' },
-					{ value: '3', title: 'Kiev' }
-				]}
-				onChange={setSelectValue}
-			/>
+			{/*<UncontrolledRating onChange={() => {}} />*/}
+			{/*<UncontrolledOnOff />*/}
+			{/*<Select*/}
+			{/*	value={selectValue}*/}
+			{/*	items={[*/}
+			{/*		{ value: '1', title: 'Minsk' },*/}
+			{/*		{ value: '2', title: 'Moscow' },*/}
+			{/*		{ value: '3', title: 'Kiev' }*/}
+			{/*	]}*/}
+			{/*	onChange={setSelectValue}*/}
+			{/*/>*/}
 		</div>
 	)
 }

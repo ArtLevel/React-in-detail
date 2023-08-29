@@ -8,8 +8,15 @@ type ActionT = {
 	type: string
 }
 
+const TOGGLE_CONSTANT = 'TOGGLE_COLLAPSED'
+
 const reducer = (state: boolean, action: ActionT) => {
-	if (action.type === 'TOGGLE-COLLAPSED') return !state
+	console.log('REDUCER START:')
+	console.log(state)
+	console.log(action)
+	console.log('REDUCER END')
+
+	if (action.type === 'TOGGLE_COLLAPSED') return !state
 	return state
 }
 
@@ -22,7 +29,7 @@ export function UncontrolledAccordion({ titleValue }: AccordionPT) {
 			{/*<AccordionTitle title={titleValue} callback={toggleAccordion} />*/}
 			<AccordionTitle
 				title={titleValue}
-				callback={() => dispatch({ type: 'TOGGLE-COLLAPSED' })}
+				callback={() => dispatch({ type: 'TOGGLE_COLLAPSED' })}
 			/>
 			{collapsed && <AccordionBody />}
 		</div>

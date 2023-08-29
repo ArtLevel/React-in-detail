@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 type ItemT = {
 	title: string
@@ -13,7 +13,7 @@ type AccordionPT = {
 	onClick: (value: any) => void
 }
 
-export function Accordion({
+function Accordion({
 	items,
 	titleValue,
 	active,
@@ -56,3 +56,5 @@ const AccordionBody: FC<AccordionBodyPT> = ({ items, onClick }) => {
 		</ul>
 	)
 }
+
+export default React.memo(Accordion)

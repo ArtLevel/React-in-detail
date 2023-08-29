@@ -1,12 +1,12 @@
 import './App.css'
-import { Accordion } from './components/Accordion/Accordion'
-import { Rating, RatingValueT } from './components/Raiting/Raiting'
-import { OnOff } from './components/OnOff/OnOff'
-import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion'
-import { UncontrolledRating } from './components/UncontrolledRating/UncontrolledRating'
+import Accordion from './components/Accordion/Accordion'
+import Rating, { RatingValueT } from './components/Raiting/Raiting'
 import React, { useState } from 'react'
-import { UncontrolledOnOff } from './components/UncontrolledOnOff/UncontrolledOnOff'
-import { Select } from './components/Select/Select'
+import OnOff from './components/OnOff/OnOff'
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion'
+import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating'
+import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff'
+import Select from './components/Select/Select'
 
 function App() {
 	console.log('App rendering')
@@ -20,31 +20,31 @@ function App() {
 
 	return (
 		<div className='app'>
-			{/*<Accordion*/}
-			{/*	titleValue={'Accordion1'}*/}
-			{/*	active={accordionActive}*/}
-			{/*	toggleActive={toggleActiveAccordion}*/}
-			{/*	items={[*/}
-			{/*		{ title: 'Dimych', value: 1 },*/}
-			{/*		{ title: 'Valera', value: 2 },*/}
-			{/*		{ title: 'Viktor', value: 3 }*/}
-			{/*	]}*/}
-			{/*	onClick={() => {}}*/}
-			{/*/>*/}
-			{/*<Rating value={ratingValue} setRating={setRatingValue} />*/}
-			{/*<OnOff callback={toggleOnOff} value={onOff} />*/}
+			<Accordion
+				titleValue={'Accordion1'}
+				active={accordionActive}
+				toggleActive={toggleActiveAccordion}
+				items={[
+					{ title: 'Dimych', value: 1 },
+					{ title: 'Valera', value: 2 },
+					{ title: 'Viktor', value: 3 }
+				]}
+				onClick={() => {}}
+			/>
+			<Rating value={ratingValue} setRating={setRatingValue} />
+			<OnOff callback={toggleOnOff} value={onOff} />
 			<UncontrolledAccordion titleValue={'uncontrolled'} />
-			{/*<UncontrolledRating onChange={() => {}} />*/}
-			{/*<UncontrolledOnOff />*/}
-			{/*<Select*/}
-			{/*	value={selectValue}*/}
-			{/*	items={[*/}
-			{/*		{ value: '1', title: 'Minsk' },*/}
-			{/*		{ value: '2', title: 'Moscow' },*/}
-			{/*		{ value: '3', title: 'Kiev' }*/}
-			{/*	]}*/}
-			{/*	onChange={setSelectValue}*/}
-			{/*/>*/}
+			<UncontrolledRating onChange={() => {}} />
+			<UncontrolledOnOff />
+			<Select
+				value={selectValue}
+				items={[
+					{ value: '1', title: 'Minsk' },
+					{ value: '2', title: 'Moscow' },
+					{ value: '3', title: 'Kiev' }
+				]}
+				onChange={setSelectValue}
+			/>
 		</div>
 	)
 }

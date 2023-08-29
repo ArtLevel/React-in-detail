@@ -1,5 +1,5 @@
 import s from './Select.module.css'
-import { useState, KeyboardEvent, useEffect } from 'react'
+import React, { useState, KeyboardEvent, useEffect } from 'react'
 
 type ItemT = {
 	title: string
@@ -12,7 +12,7 @@ type SelectPT = {
 	onChange: (value: any) => void
 }
 
-export function Select({ items, value, onChange }: SelectPT) {
+function Select({ items, value, onChange }: SelectPT) {
 	const [active, setActive] = useState(false)
 	const [hoveredElementValue, setHoveredElementValue] = useState(value)
 
@@ -71,3 +71,5 @@ export function Select({ items, value, onChange }: SelectPT) {
 		</>
 	)
 }
+
+export default React.memo(Select)

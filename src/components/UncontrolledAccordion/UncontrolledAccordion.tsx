@@ -11,7 +11,7 @@ export type ActionT = {
 
 export const TOGGLE_COLLAPSED = 'TOGGLE_COLLAPSED'
 
-export function UncontrolledAccordion({ titleValue }: AccordionPT) {
+function UncontrolledAccordion({ titleValue }: AccordionPT) {
 	// const [active, setActive] = useState<boolean>(false)
 	const [state, dispatch] = useReducer(reducer, { collapsed: false })
 
@@ -45,3 +45,5 @@ function AccordionBody() {
 		</ul>
 	)
 }
+
+export default React.memo(UncontrolledAccordion)

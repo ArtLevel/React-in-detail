@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { Accordion } from './Accordion'
+import Accordion from './Accordion'
 
 export default {
 	title: 'Accordion stories',
@@ -47,7 +47,7 @@ export const ModeChanging = () => {
 				{ title: 'Valera', value: 2 },
 				{ title: 'Viktor', value: 3 }
 			]}
-			onClick={(value) => alert(`user with id ${value} should be happy`)}
+			onClick={value => alert(`user with id ${value} should be happy`)}
 			titleValue='Users'
 			active={value}
 			toggleActive={() => setValue(!value)}

@@ -5,20 +5,20 @@ export default {
 	title: 'HW1'
 }
 
-const cities = [
-	{ value: 1, title: 'Moscow', country: 'Russia' },
-	{ value: 2, title: 'Rostov', country: 'Russia' },
-	{ value: 3, title: 'Pskov', country: 'Russia' },
-	{ value: 1, title: 'Minsk', country: 'Belarus' },
-	{ value: 2, title: 'Brest', country: 'Belarus' },
-	{ value: 1, title: 'Kiev', country: 'Ukraina' },
-	{ value: 2, title: 'Berdansk', country: 'Ukraina' }
-]
-
 export const HW1 = () => {
 	const [oneSelectValue, setOneSelectValue] = useState(1)
 	const [twoSelectValue, setTwoSelectValue] = useState(1)
 	const [threeSelectValue, setThreeSelectValue] = useState(1)
+	const [cities, setSities] = useState([
+		{ value: 1, title: 'Moscow', country: 'Russia' },
+		{ value: 2, title: 'Rostov', country: 'Russia' },
+		{ value: 3, title: 'Pskov', country: 'Russia' },
+		{ value: 1, title: 'Minsk', country: 'Belarus' },
+		{ value: 2, title: 'Brest', country: 'Belarus' },
+		{ value: 1, title: 'Kiev', country: 'Ukraina' },
+		{ value: 2, title: 'Berdansk', country: 'Ukraina' }
+	])
+	
 	const [counter, setCounter] = useState(0)
 
 	const onChangeSelect = useCallback((selectId: number, value: number) => {

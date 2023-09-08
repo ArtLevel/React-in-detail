@@ -14,7 +14,6 @@ function App() {
 	const [accordionActive, setAccordionActive] = useState<boolean>(false)
 	const [onOff, setOnOff] = useState<boolean>(false)
 	const [selectValue, setSelectValue] = useState('1')
-
 	const toggleActiveAccordion = () => setAccordionActive(prev => !prev)
 	const toggleOnOff = () => setOnOff(prev => !prev)
 

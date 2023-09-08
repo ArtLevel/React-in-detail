@@ -45,7 +45,7 @@ type AccordionBodyPT = {
 }
 
 const AccordionBody: FC<AccordionBodyPT> = ({ items, onClick }) => {
-	console.log('AccordeonBody rendering')
+	console.log('AccordionBody rendering')
 	return (
 		<ul>
 			{items.map((i, inx) => (

@@ -15,8 +15,7 @@ type SelectPT = {
 function Select({ items, value, onChange }: SelectPT) {
 	const [active, setActive] = useState(false)
 	const [hoveredElementValue, setHoveredElementValue] = useState(value)
-	console.log('Select')
-
+	
 	const selectedItem = items.find(i => i.value === value)
 	const hoveredItem = items.find(i => i.value === hoveredElementValue)
 

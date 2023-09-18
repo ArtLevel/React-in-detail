@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 export default {
 	title: 'UseState demo'
 }
 
+function generateData() {
+	console.log('generateData')
+	return 1
+}
+
 export const Example1 = () => {
 	console.log('Example1')
-	const [counter, setCounter] = useState(0) // [1, function(newValue){}]
+	const [counter, setCounter] = useState(generateData) // [1, function(newValue){}]
 
 	return (
 		<>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import clearAllMocks = jest.clearAllMocks
 
 export default {
 	title: 'UseEffect demo'
@@ -43,10 +42,6 @@ export const SetTimeoutExample = () => {
 		setInterval(() => {
 			setCounter(prevState => prevState + 1)
 		}, 1000)
-
-		// return () => {
-		// 	clearInterval(timer)
-		// }
 	}, [])
 
 	return (
@@ -60,4 +55,22 @@ export const SetTimeoutExample = () => {
 			{/*</button>*/}
 		</>
 	)
+}
+
+export const Timer = () => {
+	const [timer, setTimer] = useState(new Date().toISOString())
+
+	useEffect(() => {
+		setInterval(() => {
+			const hours = new Date().getHours().toString()
+			const minutes = new Date().getMinutes().toString()
+			const seconds = new Date().getSeconds().toString()
+
+			setTimer(
+				`${hours}:${minutes}:${seconds.length > 1 ? seconds : '0' + seconds}`
+			)
+		}, 1000)
+	}, [])
+
+	return timer
 }

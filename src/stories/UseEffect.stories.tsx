@@ -62,13 +62,15 @@ export const Timer = () => {
 
 	useEffect(() => {
 		setInterval(() => {
-			const hours = new Date().getHours().toString()
-			const minutes = new Date().getMinutes().toString()
-			const seconds = new Date().getSeconds().toString()
+			let hours = new Date().getHours().toString()
+			let minutes = new Date().getMinutes().toString()
+			let seconds = new Date().getSeconds().toString()
 
-			setTimer(
-				`${hours}:${minutes}:${seconds.length > 1 ? seconds : '0' + seconds}`
-			)
+			hours = hours.length > 1 ? hours : '0' + hours
+			minutes = minutes.length > 1 ? minutes : '0' + minutes
+			seconds = seconds.length > 1 ? seconds : '0' + seconds
+
+			setTimer(`${hours}:${minutes}:${seconds}`)
 		}, 1000)
 	}, [])
 

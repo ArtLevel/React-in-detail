@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-
+// 2
 export default {
 	title: 'UseState demo'
 }
@@ -11,7 +11,7 @@ function generateData() {
 
 export const Example1 = () => {
 	console.log('Example1')
-	const [counter, setCounter] = useState(generateData) // [1, function(newValue){}]
+	const [counter, setCounter] = useState(generateData) // [2, function(newValue){}]
 
 	return (
 		<>

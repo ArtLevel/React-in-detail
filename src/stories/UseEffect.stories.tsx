@@ -56,23 +56,3 @@ export const SetTimeoutExample = () => {
 		</>
 	)
 }
-
-export const Timer = () => {
-	const [timer, setTimer] = useState(new Date().toISOString())
-
-	useEffect(() => {
-		setInterval(() => {
-			let hours = new Date().getHours().toString()
-			let minutes = new Date().getMinutes().toString()
-			let seconds = new Date().getSeconds().toString()
-
-			hours = hours.length > 1 ? hours : '0' + hours
-			minutes = minutes.length > 1 ? minutes : '0' + minutes
-			seconds = seconds.length > 1 ? seconds : '0' + seconds
-
-			setTimer(`${hours}:${minutes}:${seconds}`)
-		}, 1000)
-	}, [])
-
-	return timer
-}

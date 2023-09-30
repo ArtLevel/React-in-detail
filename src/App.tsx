@@ -7,6 +7,7 @@ import UncontrolledAccordion from './components/UncontrolledAccordion/Uncontroll
 import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating'
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff'
 import Select from './components/Select/Select'
+import { Clock } from './components/Clock/Clock'
 
 function App() {
 	console.log('App rendering')
@@ -44,6 +45,7 @@ function App() {
 				]}
 				onChange={setSelectValue}
 			/>
+			<Clock />
 		</div>
 	)
 }

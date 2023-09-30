@@ -1,0 +1,21 @@
+.clock {
+    height: 26rem;
+    width: 26rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 30px dotted black;
+    transform: rotate(20deg);
+    border-radius: 50%;
+}
+
+.clock:before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: black;
+    border-radius: 50%;
+    z-index: 10000;
+    border: #ffbe0b 2px;
+}

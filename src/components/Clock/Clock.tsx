@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react'
-import s from './Clock.module.css'
 import styled from 'styled-components'
 
 interface IClock {
@@ -48,7 +47,7 @@ const AnalogClock = () => {
 	})
 
 	return (
-		<div className={s.clock}>
+		<ClockStyled>
 			<HourHand
 				rotation={
 					((date.getHours() % 12) +
@@ -60,13 +59,35 @@ const AnalogClock = () => {
 			/>
 			<MinHand rotation={date.getMinutes() * 6 + 'deg'} />
 			<SecondHand rotation={date.getSeconds() * 6 + 'deg'} />
-		</div>
+		</ClockStyled>
 	)
 }
 
 interface IHands {
 	rotation: string
 }
+
+const ClockStyled = styled.div`
+	height: 26rem;
+	width: 26rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 30px dotted black;
+	transform: rotate(20deg);
+	border-radius: 50%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		background: black;
+		border-radius: 50%;
+		z-index: 10000;
+		border: #ffbe0b 2px;
+	}
+`
 
 const SecondHand = styled.div<IHands>`
   display: flex;

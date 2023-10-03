@@ -45,7 +45,7 @@ function App() {
 				]}
 				onChange={setSelectValue}
 			/>
-			<Clock />
+			<Clock variant='analog' />
 		</div>
 	)
 }

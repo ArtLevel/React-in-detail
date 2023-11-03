@@ -82,6 +82,6 @@ async function run() {
 	await wait(1000)
 	console.log(3)
 }
-
+ 
 run()
 // getNumber().then(n => console.log(n))

@@ -82,3 +82,5 @@ u1.name = 'Igor'
 console.log(u1.name)
 // console.log(u1.counter)
 // console.log(u2.counter)
+
+// Encapsulation

@@ -74,13 +74,59 @@ class User {
 const u1 = new User('Dimych!', 'it-incubator', new Date(1988, 1, 10))
 const u2 = new User('Artem!', 'an IT atmosphere', new Date(1998, 12, 12))
 
-// u1.hello()
-// u2.hello()
-
 u1.name = 'Igor'
 
-console.log(u1.name)
-// console.log(u1.counter)
-// console.log(u2.counter)
+class Coder extends User {
+	constructor(name, site, dob, tech) {
+		super(name, site, dob)
+		this.tech = tech
+	}
 
-// Encapsulation
+	code() {
+		console.log(
+			`I am ${this.name}, here is my ${this.tech}: const sum = (a, b) => a * b`
+		)
+	}
+
+	hello() {
+		super.hello()
+		console.log('Go away ! ' + this.name)
+	}
+}
+
+class Hacker extends Coder {
+	#name = ''
+
+	constructor() {
+		super()
+		this.tech = 'XXX'
+		this.#name = 'XXX'
+	}
+
+	code() {
+		console.log(`I'll hack everything !`)
+	}
+}
+
+const coder1 = new Coder(
+	'Dimych Coder',
+	'it-incubator',
+	new Date(1988, 1, 10),
+	'c#'
+)
+
+// coder1.code()
+
+const hacker = new Hacker(
+	'Dimych Coder',
+	'it-incubator',
+	new Date(1988, 1, 10),
+	'c#'
+)
+
+// hacker.code()
+// hacker.hello()
+
+const users = [u1, u2, coder1, hacker]
+
+users.forEach(u => u.hello())

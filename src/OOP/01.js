@@ -106,6 +106,10 @@ class Hacker extends Coder {
 	code() {
 		console.log(`I'll hack everything !`)
 	}
+
+	hello() {
+		throw new Error('I am Hacker in the Dark')
+	}
 }
 
 const coder1 = new Coder(

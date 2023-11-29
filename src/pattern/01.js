@@ -31,3 +31,5 @@ const a = () => console.log('click')
 button.addEventListener('click', a)
 
 button.removeEventListener('click', a)
+
+console.log([[][0]+[]][0][0])
